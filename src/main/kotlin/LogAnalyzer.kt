@@ -2,7 +2,11 @@ package at.mgriesser.LogAnalyzer
 
 class LogAnalyzer {
 
-    public fun isValidLogFileName(fileName: String): Boolean {
+    fun isValidLogFileName(fileName: String): Boolean {
+
+        if (fileName.isEmpty())
+            throw IllegalArgumentException("Dateiname muss angegeben werden!")
+
         return fileName.endsWith(
             ".SLF",
             ignoreCase = true,
